@@ -1,0 +1,6 @@
+# Only the base package and pytest; no train/video/model extras.
+huggingface-hub==0.27.1
+jsonschema==4.23.0
+numpy==2.2.6
+PyYAML==6.0.2
+pytest==8.3.5
