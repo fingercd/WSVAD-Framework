@@ -20,6 +20,15 @@ uv run python -m pytest
 
 Real encoders require their own environments and weights, prepared under the applicable upstream licenses and pinned revisions.
 
+GitHub Actions runs a smaller `Core CPU tests` suite on Ubuntu / Python 3.11 for
+pull requests, updates to `main`, and manual runs. It covers configuration and
+registry behavior, feature and cache contracts, sampling, manifests, temporal
+labels, UCF-Crime annotation parsing, feature storage, metrics, and lazy CLI
+imports. The suite uses synthetic inputs and bundled text annotations; it needs
+no GPU, videos, pretrained weights, or train/video extras. Its dependency pins
+are in `.github/requirements-ci.txt`, and its exact test list is in
+`.github/workflows/ci.yml`. Real-encoder and training validation remains separate.
+
 ## License
 
 First-party code in this repository is licensed under the MIT License. Upstream code, model weights, and datasets retain their own terms.

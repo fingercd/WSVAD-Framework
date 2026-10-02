@@ -20,6 +20,12 @@ uv run python -m pytest
 
 真实编码器还需按照对应上游项目的许可证和固定 revision 准备独立环境与权重。数据、权重和生成的运行产物不属于本仓库。
 
+GitHub Actions 的 `Core CPU tests` 在 Ubuntu / Python 3.11 上检查配置、注册器、特征与
+缓存契约、采样、manifest、时间标注、UCF-Crime 标注解析、特征存储、指标和 CLI 延迟导入。
+它在 PR、`main` 更新和手动触发时运行，只使用合成输入及仓库中的文本标注，无需 GPU、
+视频、预训练权重或 train/video extras。依赖固定在 `.github/requirements-ci.txt`，完整
+测试列表在 `.github/workflows/ci.yml`；真实编码器与训练验证继续单独执行。
+
 ## 许可
 
 本仓库自有代码采用 MIT License。上游代码、模型权重和数据仍遵循各自许可证。
